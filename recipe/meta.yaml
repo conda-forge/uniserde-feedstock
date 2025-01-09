@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.11" %}
 {% set name = "uniserde" %}
-{% set version = "0.3.14" %}
+{% set version = "0.3.15" %}
 
 package:
   name: {{ name|lower }}
@@ -8,17 +8,18 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/uniserde-{{ version }}.tar.gz
-  sha256: f0bd3289afab3661e88746b8e7bce43f925d29a4e1cd5c6c1fd972d0d6958024
+  sha256: d1cf8e72359f9f9150a33bf105e497cebc98bd428b21e1e06356a5e72f7b5fb6
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - hatchling
+    - hatchling ==1.26.3
+    - hatch-vcs
     - pip
   run:
     - python >={{ python_min }}
