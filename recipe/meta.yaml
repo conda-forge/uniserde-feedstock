@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "uniserde" %}
-{% set version = "0.3.15" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/uniserde-{{ version }}.tar.gz
-  sha256: d1cf8e72359f9f9150a33bf105e497cebc98bd428b21e1e06356a5e72f7b5fb6
+  sha256: 3e816ab9c06c79d52d45ca00344c8a9983412dada0c729d6284e1f6de8b69373
 
 build:
   noarch: python
@@ -23,8 +23,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - python-dateutil >=2.8.2
-    - typing-extensions >=4.7.1
+    - python-dateutil >=2.8.2,<3.0.0
+    - typing_extensions >=4.7.1,<5.0.0
 
 test:
   imports:
