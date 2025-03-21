@@ -1,6 +1,6 @@
 {% set python_min = "3.11" %}
 {% set name = "uniserde" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.0.post0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/uniserde-{{ version }}.tar.gz
-  sha256: 3e816ab9c06c79d52d45ca00344c8a9983412dada0c729d6284e1f6de8b69373
+  sha256: 5faae95495ff186e5fcb302a6a2b6e0517379a642c80f288b021753ce48b4970
 
 build:
   noarch: python
